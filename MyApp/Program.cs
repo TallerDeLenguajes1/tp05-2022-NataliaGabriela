@@ -1,19 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
-int NumeroIngresado, NumeroInvertido;
-NumeroInvertido= 0;
+string cadenaDeTexto,segundaCadena,subCadena,cadenaConcatenada;
+int longitudCadena;
 
-Console.WriteLine("Ingrese el numero a invertir, debe ser mayor que cero");
-NumeroIngresado= Convert.ToInt32(Console.ReadLine());
-if (NumeroIngresado > 0)
-{
-while (NumeroIngresado > 0)
-{
-    NumeroInvertido= NumeroInvertido * 10 + NumeroIngresado % 10;
-    NumeroIngresado= NumeroIngresado/10;
-}
-  Console.WriteLine("El numero invertido es: " + NumeroInvertido);    
-}
-else
-{
-      Console.WriteLine("No se puede invertir porque es mayor que 0\n");
-}
+Console.WriteLine("Ingrese una cadena de  texto");
+cadenaDeTexto = Console.ReadLine()!;
+longitudCadena = cadenaDeTexto.Length;
+Console.WriteLine("longitud de la cadena" + longitudCadena);
+Random numeroAleatorio = new Random();
+
+Console.WriteLine("caracter aleatorio " + cadenaDeTexto[(numeroAleatorio.Next(longitudCadena))]);
+Console.WriteLine("Ingrese una segunda cadena de  texto ");
+segundaCadena = Console.ReadLine()!;
+cadenaConcatenada = cadenaDeTexto + segundaCadena;
+Console.WriteLine("cadena concatenada " + cadenaConcatenada);
+subCadena = cadenaConcatenada.Substring(longitudCadena);
+Console.WriteLine("subcadena: "  + subCadena);
